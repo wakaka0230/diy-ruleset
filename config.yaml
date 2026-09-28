@@ -91,7 +91,7 @@ categories:
     upstreams:
       - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/Emby.list"}
 
-  - name: JP Media
+  - name: JP_Media
     upstreams:
       - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abema.list"}
       - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dmm.list"}
