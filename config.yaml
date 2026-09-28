@@ -1,5 +1,5 @@
 global:
-  enable_gh_proxy: true
+  enable_gh_proxy: false
   gh_proxy: "https://v6.gh-proxy.org/"
   split_cnip: true
   singbox:      {enable: true, single_file: false, json: true, srs: true}
@@ -13,123 +13,151 @@ global:
   quantumultx:  {enable: true, single_file: true}
 
 categories:
-  - name: cn
-    merge_from: ["applecn"]
-    publish_dnsmasq: true               #仅作示例
-    publish_smartdns: true              #仅作示例
-    dnsmasq_server: "223.6.6.6"         #仅作示例
-    smartdns_server: "china_group"      #仅作示例
+  - name: Speedtest
     upstreams:
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.list"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list"}
-      - {url: "https://raw.githubusercontent.com/mayaxcn/china-ip-list/master/chnroute.txt"}
-      - {url: "https://raw.githubusercontent.com/mayaxcn/china-ip-list/master/chnroute_v6.txt"}
-      - {url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaIp.list"}
-      - {url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaIpV6.list"}
-      - {url: "https://ispip.clang.cn/all_cn_ipv46.txt"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/speedtest.list"}
 
-  - name: reject
-    auto_extract_white: true
-    publish_white: true
-    white_behavior: "remove"
+  - name: EasyPrivacy
     publish_adblock: true
     publish_dnsmasq: true
     publish_smartdns: true
-    remove_urls:
-      - {"https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/white.txt"}
     upstreams:
-      - {url: "https://anti-ad.net/clash.yaml"}
+      - {url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/mrs/BanEasyPrivacy_domain.list"}
       - {url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml"}
-      - {url: "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"}
+      - {url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/mrs/BanEasyPrivacy_ip.list"}
 
-  - name: google
+  - name: Meta
     upstreams:
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/google.txt"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.list"}
-      - {url: "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/clash/google-ai.yaml"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.list"}
-
-  - name: ai
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/ai.list"}
-      - {url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/AI.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.list"}
-      - {url: "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/clash/global.yaml"}
-
-  - name: applecn
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMusic/AppleMusic.list"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"}
-
-  - name: cloudflare
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.list"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/geoip/refs/heads/release/clash/ipcidr/cloudflare.txt"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geosite/cloudflare.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/cloudflare.list"}
-
-  - name: proxy
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.list"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"}
-
-  - name: telegram
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"}
-      - {url: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/telegram.txt"}
-
-  - name: twitter
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geosite/twitter.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/twitter.list"}
-
-  - name: meta
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/meta.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Threads/Threads.list"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Facebook/Facebook.list"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Whatsapp/Whatsapp.list"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list"}
 
-  - name: gits
+  - name: GitHub
     upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitBook/GitBook.list"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gitee/Gitee.list"}
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitLab/GitLab.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.list"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
 
-  - name: tiktok
-    upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.list"}
 
-  - name: discord
+  - name: Reddit
     upstreams:
-      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"}
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/discord.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/reddit.list"}
 
-  - name: httpdns
+  - name: Notion
     upstreams:
-      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-httpdns-cn.list"}
-      - {url: "https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/refs/heads/main/ruleset/HTTPDNS.Block.list"}
-      - {url: "https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/httpdns.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/notion.list"}
 
-  - name: private
+  - name: AI
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.list"}
+
+  - name: Google
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"}
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list"}
+
+  - name: Telegram
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip.list"}
+
+  - name: X
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geosite/twitter.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/twitter.list"}
+
+  - name: YouTube
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"}
+
+  - name: Netflix
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list"}
+
+  - name: TikTok
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.list"}
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.listt"}
+
+  - name: Emby
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/Emby.list"}
+
+  - name: JP Media
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abema.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dmm.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/unext.list"}
+
+  - name: Discord
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.list"}
+
+  - name: Twitch
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.list"}
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitch/Twitch.list"}
+
+  - name: Microsoft
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.list"}
+
+  - name: Apple
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"}
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.list"}
+
+  - name: Steam
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.list"}
+
+  - name: Binance
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.list"}
+  
+  - name: OKX
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/okx.list"}
+
+  - name: Metamask
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/Metamask.list"}
+
+  - name: Trustwallet
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/trustwallet.list"}    
+
+  - name: Bybit
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bybit.list"}
+
+  - name: PayPal
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.list"}
+
+  - name: Redotpay
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/redotpay.list"}
+
+  - name: PT&BT
+    upstreams:
+      - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list"}
+
+  - name: Lan
     upstreams:
       - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"}
       - {url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"}
       - {url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list"}
 
-  - name: fakeipfilter
+  - name: ChinaIPs
     upstreams:
-      - {url: "https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/fake-ip-filter.list"}
-
-  - name: webrtc
-    singbox: {single_file: true}
-    mihomo:  {single_file: true}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list"}
