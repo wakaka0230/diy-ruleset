@@ -1,7 +1,6 @@
 global:
-  enable_gh_proxy: false
-  gh_proxy: "https://v6.gh-proxy.org/"
   split_cnip: true
+  enable_gh_proxy: {enable: true, gh_proxy: "https://v6.gh-proxy.org/"}  
   singbox:      {enable: true, single_file: false, json: true, srs: true}
   mihomo:       {enable: true, single_file: false, txt: false, yaml: true, mrs: true}
   v2ray:        {enable: true, single_file: false}
