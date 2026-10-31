@@ -1,0 +1,14 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "domain_keyword": [
+        "28.al",
+        "emby",
+        "liminalnet",
+        "mefun",
+        "startspoint"
+      ]
+    }
+  ]
+}
