@@ -151,7 +151,7 @@ categories:
 
   - name: Proxy
     upstreams:
-      - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/Proxy.list"}
+      - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/proxy.list"}
 
   - name: Lan
     upstreams:
