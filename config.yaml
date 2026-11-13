@@ -152,6 +152,7 @@ categories:
   - name: Proxy
     upstreams:
       - {url: "https://raw.githubusercontent.com/wakaka0230/rules.conf/main/rules/proxy.list"}
+      - {url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/alibabacloud.list"}
 
   - name: Lan
     upstreams:
