@@ -1,0 +1,27 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "domain": [
+        "dictionary.cambridge.org"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "alibabacloud.co.in",
+        "alibabacloud.com",
+        "alibabacloud.com.au",
+        "alibabacloud.com.hk",
+        "alibabacloud.com.my",
+        "alibabacloud.com.sg",
+        "alibabacloud.com.tw",
+        "alicloud.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "kox.moe"
+      ]
+    }
+  ]
+}

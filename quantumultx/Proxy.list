@@ -1,0 +1,10 @@
+host,dictionary.cambridge.org,Proxy
+host-suffix,alibabacloud.co.in,Proxy
+host-suffix,alibabacloud.com,Proxy
+host-suffix,alibabacloud.com.au,Proxy
+host-suffix,alibabacloud.com.hk,Proxy
+host-suffix,alibabacloud.com.my,Proxy
+host-suffix,alibabacloud.com.sg,Proxy
+host-suffix,alibabacloud.com.tw,Proxy
+host-suffix,alicloud.com,Proxy
+host-keyword,kox.moe,Proxy

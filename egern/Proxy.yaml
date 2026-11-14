@@ -1,0 +1,14 @@
+no_resolve: true
+domain_set:
+  - dictionary.cambridge.org
+domain_keyword_set:
+  - kox.moe
+domain_suffix_set:
+  - alibabacloud.co.in
+  - alibabacloud.com
+  - alibabacloud.com.au
+  - alibabacloud.com.hk
+  - alibabacloud.com.my
+  - alibabacloud.com.sg
+  - alibabacloud.com.tw
+  - alicloud.com
